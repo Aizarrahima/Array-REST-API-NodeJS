@@ -42,7 +42,9 @@ app.get("/book/:id", (req, res) => {
     const book = books.find((item) => item.id == req.params.id);
     res.send({
         message: "Berhasil menampilkan perubahan data buku",
-        data: { book }
+        data: {
+            book
+        }
     })
 })
 
@@ -92,7 +94,9 @@ app.put("/books/:id", (req, res) => {
 
     res.send({
         message: "Berhasil mengubah buku",
-        data: { book: books[bookIndex] }
+        data: {
+            book: books[bookIndex]
+        }
     })
 })
 
@@ -139,4 +143,3 @@ app.delete("/books/:id", (req, res) => {
 })
 
 const port = 8000;
-app.listen(port, () => console.log(`App running ${port}`))
